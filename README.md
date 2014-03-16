@@ -19,6 +19,16 @@ Once stable, VideoVR will be available for free through the Chrome Web Store
 (and hopefully later as a Firefox Add-on). For now, you will need to install
 it manually from [chrome://extensions/](chrome://extensions/).
 
+## Roadmap
+
+* Correct proportions in fullscreen mode
+* Capture basic input
+** Zoom controls
+** Playback controls
+* 3D video support (ala VR Cinema 3D)
+* Capture gamepad input
+* Capture HMD sensor input using vr.js
+
 ## Libraries used
 
 * Three.JS
