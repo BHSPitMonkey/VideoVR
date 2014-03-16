@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="261.25"
+   height="148"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="icons.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="112.70101"
+     inkscape:cy="29.567684"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="10"
+     fit-margin-bottom="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     inkscape:window-width="1137"
+     inkscape:window-height="672"
+     inkscape:window-x="420"
+     inkscape:window-y="264"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.25,-904.44856)">
+    <g
+       id="g3903"
+       transform="translate(-10,9.7499977)">
+      <rect
+         ry="4"
+         rx="4"
+         y="1013.8558"
+         x="19.993589"
+         height="18.512821"
+         width="18.512821"
+         id="rect2985"
+         style="color:#000000;fill:#d40000;fill-opacity:1;fill-rule:nonzero;stroke:#800000;stroke-width:0.48717949;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <g
+         id="g3016"
+         transform="matrix(1.0336127,0,0,1.0336127,-1.0620966,-34.131178)"
+         style="fill:#000000">
+        <path
+           style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           d="m 33.233744,1022.8622 c 0,2.2211 -1.676736,4.0217 -3.745092,4.0217 -2.068357,0 -3.415483,-0.01 -7.429514,-4.0217 3.720563,-3.8534 5.361157,-4.0217 7.429514,-4.0217 2.068356,0 3.745092,1.8005 3.745092,4.0217 z"
+           id="path2987"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sscss" />
+        <use
+           transform="matrix(-1,0,0,-1,58.652717,2045.7244)"
+           height="1052.3622"
+           width="744.09448"
+           inkscape:transform-center-x="-1.812499"
+           id="use3014"
+           xlink:href="#path2987"
+           y="0"
+           x="0" />
+      </g>
+      <path
+         transform="matrix(1.6239317,0,0,1.6239317,-18.148506,-637.54015)"
+         d="m 30.875,1022.6122 c 0,0.932 -0.755519,1.6875 -1.6875,1.6875 -0.931981,0 -1.6875,-0.7555 -1.6875,-1.6875 0,-0.932 0.755519,-1.6875 1.6875,-1.6875 0.931981,0 1.6875,0.7555 1.6875,1.6875 z"
+         sodipodi:ry="1.6875"
+         sodipodi:rx="1.6875"
+         sodipodi:cy="1022.6122"
+         sodipodi:cx="29.1875"
+         id="path3012"
+         style="color:#000000;fill:#d40000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(0.75633245,0,0,0.75633245,7.1745459,249.67737)"
+         d="m 30.875,1022.6122 c 0,0.932 -0.755519,1.6875 -1.6875,1.6875 -0.931981,0 -1.6875,-0.7555 -1.6875,-1.6875 0,-0.932 0.755519,-1.6875 1.6875,-1.6875 0.931981,0 1.6875,0.7555 1.6875,1.6875 z"
+         sodipodi:ry="1.6875"
+         sodipodi:rx="1.6875"
+         sodipodi:cy="1022.6122"
+         sodipodi:cx="29.1875"
+         id="path3012-1"
+         style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         sodipodi:type="arc" />
+    </g>
+    <g
+       id="g3875"
+       transform="translate(-10,9.7499977)"
+       inkscape:export-filename="/home/stephen/Dropbox/Code/VideoVR/videovr-chrome/icon-19.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="4"
+         rx="4"
+         y="1013.8558"
+         x="49.243591"
+         height="18.512821"
+         width="18.512821"
+         id="rect2985-9"
+         style="color:#000000;fill:#d40000;fill-opacity:1;fill-rule:nonzero;stroke:#800000;stroke-width:0.48717949;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <g
+         transform="translate(-0.62434934,0.2209338)"
+         id="g3869">
+        <text
+           xml:space="preserve"
+           style="font-size:13.68465137px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Crimson Text;-inkscape-font-specification:Crimson Text"
+           x="57.723747"
+           y="1027.5548"
+           id="text3844-7"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3846-6"
+             x="57.723747"
+             y="1027.5548"
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#800000;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+             dx="0 -1.1649293">VR</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:13.31940842px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffd5d5;fill-opacity:1;stroke:none;font-family:Crimson Text;-inkscape-font-specification:Crimson Text"
+           x="56.682774"
+           y="1052.9578"
+           id="text3844"
+           sodipodi:linespacing="125%"
+           transform="scale(1.0242813,0.97629435)"><tspan
+             sodipodi:role="line"
+             id="tspan3846"
+             x="56.682774"
+             y="1052.9578"
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffd5d5;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+             dx="0 -1.1338372">VR</tspan></text>
+      </g>
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3875"
+       id="use3883"
+       transform="matrix(6.7368419,0,0,6.7368419,-139.73684,-5979.867)"
+       width="744.09448"
+       height="1052.3622"
+       inkscape:export-filename="/home/stephen/Dropbox/Code/VideoVR/videovr-chrome/icon-128.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3875"
+       id="use3883-3"
+       transform="matrix(2.5263157,0,0,2.5263157,-32.526313,-1590.9738)"
+       width="744.09448"
+       height="1052.3622"
+       inkscape:export-filename="/home/stephen/Dropbox/Code/VideoVR/videovr-chrome/icon-48.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

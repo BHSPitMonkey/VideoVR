@@ -1,0 +1,25 @@
+{
+  "name" : "VideoVR",
+  "version" : "1.0",
+  "description" : "Present a HTML5 Video in VR (for use with an Oculus Rift).",
+  "background" : {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action" : {
+    "default_icon" : "icon-19.png",
+    "default_title" : "Play video in VR mode"
+  },
+  "permissions": [ "declarativeContent" ],
+  "permissions": [
+    "declarativeContent",
+    "tabs", 
+    "http://*/*", 
+    "https://*/*"
+  ],
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  },
+  "manifest_version": 2
+}
