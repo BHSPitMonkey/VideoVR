@@ -23,8 +23,8 @@ it manually from [chrome://extensions/](chrome://extensions/).
 
 * Correct proportions in fullscreen mode
 * Capture basic input
-** Zoom controls
-** Playback controls
+  * Zoom controls
+  * Playback controls
 * 3D video support (ala VR Cinema 3D)
 * Capture gamepad input
 * Capture HMD sensor input using vr.js
