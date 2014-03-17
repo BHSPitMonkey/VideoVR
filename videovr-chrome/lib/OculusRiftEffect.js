@@ -146,8 +146,15 @@ THREE.OculusRiftEffect = function ( renderer, options ) {
 	this.setHMD(HMD);	
 
 	this.setSize = function ( width, height ) {
-		left.viewport = [width/2 - HMD.hResolution/2, height/2 - HMD.vResolution/2, HMD.hResolution/2, HMD.vResolution];
-		right.viewport = [width/2, height/2 - HMD.vResolution/2, HMD.hResolution/2, HMD.vResolution];
+		// Edited to force the HMD resolution to equal the size, since it never
+		// really makes sense to center this thing anyway
+		HMD.hResolution = width;
+		HMD.vResolution = height;
+		this.setHMD(HMD); // perform new calculations
+		left.viewport = [0, 0, HMD.hResolution/2, HMD.vResolution];
+		right.viewport = [width/2, 0, HMD.hResolution/2, HMD.vResolution];
+		//left.viewport = [width/2 - HMD.hResolution/2, height/2 - HMD.vResolution/2, HMD.hResolution/2, HMD.vResolution];
+		//right.viewport = [width/2, height/2 - HMD.vResolution/2, HMD.hResolution/2, HMD.vResolution];
 
 		renderer.setSize( width, height );
 	};
