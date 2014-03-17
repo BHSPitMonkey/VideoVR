@@ -19,12 +19,28 @@ Once stable, VideoVR will be available for free through the Chrome Web Store
 (and hopefully later as a Firefox Add-on). For now, you will need to install
 it manually from [chrome://extensions/](chrome://extensions/).
 
+## Controls
+
+The following controls are supported in the viewer:
+
+* **Zoom in**: Up arrow key
+* **Zoom out**: Down arrow key
+* **Play/Pause**: Spacebar
+
+## Limitations
+
+VideoVR currently will not work with videos on pages where cross-domain 
+security rules apply (for instance, Vimeo.com). This is because we are not 
+allowed to access the video as a WebGL texture when this is the case.
+
+YouTube and directly-visited video file URLs both appear to be unaffected.
+
 ## Roadmap
 
-* Correct proportions in fullscreen mode
-* Capture basic input
-  * Zoom controls
-  * Playback controls
+* ~~Correct proportions in fullscreen mode~~
+* ~~Capture basic input~~
+  * ~~Zoom controls~~ (Now supported via up/down arrows)
+  * ~~Playback controls~~ (Now supported via spacebar to play/pause)
 * 3D video support (ala VR Cinema 3D)
 * Capture gamepad input
 * Capture HMD sensor input using vr.js
@@ -32,7 +48,7 @@ it manually from [chrome://extensions/](chrome://extensions/).
 ## Libraries used
 
 * Three.JS
-* OculusRiftEffect.js (from http://github.com/troffmo5)
+* OculusRiftEffect.js (from http://github.com/troffmo5, slightly modified)
 
 ## License
 
