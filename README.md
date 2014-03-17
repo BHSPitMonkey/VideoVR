@@ -17,7 +17,14 @@ the VR icon twice in order to properly activate fullscreen.)
 
 Once stable, VideoVR will be available for free through the Chrome Web Store
 (and hopefully later as a Firefox Add-on). For now, you will need to install
-it manually from [chrome://extensions/](chrome://extensions/).
+it manually:
+
+* Download and extract a copy of this repository (ZIP download)
+* Visit [chrome://extensions/](chrome://extensions/)
+* Ensure that the "Developer mode" checkbox is checked
+* Click **Load unpacked extension...**
+* Browse to the **videovr-chrome** directory
+* Click **Open** (or **OK** or **Done**)
 
 ## Controls
 
