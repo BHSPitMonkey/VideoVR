@@ -12,13 +12,16 @@ var videovr = {
         this.canvas.webkitRequestFullscreen();
     }
   },
+  destroy: function() {
+    this.canvas.parentNode.removeChild(this.canvas);
+    this.started = false;
+  },
   start: function () {
     if (this.started == true)
       return;
     // Three.js setup
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-    this.camera.position.z = 10;
     this.renderer = new THREE.WebGLRenderer();
     this.canvas = this.renderer.domElement;
     document.body.appendChild(this.canvas);
@@ -38,8 +41,6 @@ var videovr = {
     //effect.fov = 110;
 
     document.addEventListener("webkitfullscreenchange", function () {
-      console.log("fullscreenchange");
-      console.log(videovr.canvas.height);
       if (videovr.effect !== undefined && videovr.canvas !== undefined)
         videovr.effect.setSize(window.innerWidth, window.innerHeight);
     }, false);
@@ -55,28 +56,33 @@ var videovr = {
       return;
     }
     this.video = videos[0];
-    
-    // Set up a rectangular plane object
-    var geometry = new THREE.PlaneGeometry(16, 9);
+
+    // Set up a rectangular plane object as a screen
+    var geometry = new THREE.PlaneGeometry(15, 15*(this.video.videoHeight/this.video.videoWidth));
     this.texture = new THREE.Texture(this.video);
     var material = new THREE.MeshBasicMaterial( { map: this.texture, overdraw: true, side:THREE.DoubleSide } );
-    //var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    var plane = new THREE.Mesh( geometry, material );
-    this.scene.add( plane );
-    
+    this.sceen = new THREE.Mesh( geometry, material );
+    this.sceen.position.z = -10;
+    this.scene.add( this.sceen );
+
     // Set up skybox thing
-    var cubegeometry = new THREE.CubeGeometry(50, 50, 50);
+    var cubegeometry = new THREE.CubeGeometry(100, 100, 200);
     var cubematerial = new THREE.MeshBasicMaterial( { color: 0x111111, side: THREE.BackSide } );
     var cube = new THREE.Mesh( cubegeometry, cubematerial );
     this.scene.add( cube );
 
     // Begin rendering to canvas
     (function animloop(){
-      requestAnimationFrame(animloop);
-      if( videovr.video.readyState === videovr.video.HAVE_ENOUGH_DATA ){
-        videovr.texture.needsUpdate = true;
+      try {
+        if( videovr.video.readyState === videovr.video.HAVE_ENOUGH_DATA ){
+          videovr.texture.needsUpdate = true;
+        }
+        videovr.effect.render(videovr.scene, videovr.camera);
+        requestAnimationFrame(animloop);
+      } catch (e) {
+        alert("Sorry, this video isn't supported.");
+        videovr.destroy();
       }
-      videovr.effect.render(videovr.scene, videovr.camera);
     })();
     
     // Set up keyboard capture
@@ -84,10 +90,14 @@ var videovr = {
       e = e || window.event;
       switch (e.keyCode) {
         case 38: // up arrow
-          videovr.camera.position.z -= 1; // move in
+          videovr.sceen.position.z += 1; // move screen closer
+          if (videovr.sceen.position.z > -1)
+            videovr.sceen.position.z = -1; // limit closeness
           break;
         case 40: // down arrow
-          videovr.camera.position.z += 1; // move out
+          videovr.sceen.position.z -= 1; // move screen farther
+          if (videovr.sceen.position.z < -99)
+            videovr.sceen.position.z = -99; // limit distance
           break;
         case 32: // spacebar
           // play/pause
