@@ -19,7 +19,8 @@ Once stable, VideoVR will be available for free through the Chrome Web Store
 (and hopefully later as a Firefox Add-on). For now, you will need to install
 it manually:
 
-* Download and extract a copy of this repository (ZIP download)
+* Download and extract a copy of this repository (
+  [ZIP download](https://github.com/BHSPitMonkey/VideoVR/archive/master.zip))
 * Visit [chrome://extensions/](chrome://extensions/)
 * Ensure that the "Developer mode" checkbox is checked
 * Click **Load unpacked extension...**
