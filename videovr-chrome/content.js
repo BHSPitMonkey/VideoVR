@@ -59,7 +59,16 @@ var videovr = {
     // Add OculusRiftEffect
     this.effect = new THREE.OculusRiftEffect(this.renderer);
     this.effect.setSize(this.width, this.height);
+    
+    // Set initial 3D mode
     this.mode3d = videovr.MODE_3D_NONE;
+    var yttitles = document.getElementsByClassName('ytp-menu-title');
+    for (var i=0; i<yttitles.length; i++) {
+      if (yttitles[i].innerText == "3D") {
+        this.mode3d = videovr.MODE_3D_HORIZONTAL;
+        break;
+      }
+    }
     //effect.separation = 20;
     //effect.distortion = 0.1;
     //effect.fov = 110;
