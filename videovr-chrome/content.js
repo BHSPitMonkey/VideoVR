@@ -16,7 +16,19 @@ var videovr = {
     this.canvas.parentNode.removeChild(this.canvas);
     this.started = false;
   },
-  start: function () {
+  zoom: function(val) {
+    if (val == 1) { // Zoom in
+      this.sceen.position.z += 1; // Move screen closer
+      if (this.sceen.position.z > -1)
+        this.sceen.position.z = -1; // Limit closeness
+    }    
+    else if (val == -1) { // Zoom out
+      this.sceen.position.z -= 1; // Move screen farther
+      if (this.sceen.position.z < -99)
+        this.sceen.position.z = -99; // Limit distance
+    }
+  },
+  start: function() {
     if (this.started == true) {
       this.canvas.webkitRequestFullscreen();
       return;
@@ -106,14 +118,10 @@ var videovr = {
       e = e || window.event;
       switch (e.keyCode) {
         case 38: // up arrow
-          videovr.sceen.position.z += 1; // move screen closer
-          if (videovr.sceen.position.z > -1)
-            videovr.sceen.position.z = -1; // limit closeness
+          videovr.zoom(1);
           break;
         case 40: // down arrow
-          videovr.sceen.position.z -= 1; // move screen farther
-          if (videovr.sceen.position.z < -99)
-            videovr.sceen.position.z = -99; // limit distance
+          videovr.zoom(-1);
           break;
         case 32: // spacebar
           // play/pause
@@ -132,6 +140,15 @@ var videovr = {
     this.canvas.addEventListener('dblclick', function(e){ 
       e.target.webkitRequestFullscreen();
     });
+    
+    // Listen for mouse wheel
+    this.canvas.addEventListener('mousewheel',function(e){
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      videovr.zoom(delta);
+      return false;
+    }, false);
+
+
   }
 };
 
