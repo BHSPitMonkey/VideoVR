@@ -38,6 +38,7 @@ var videovr = {
     this.canvas.style.outline = "none";
     this.canvas.tabIndex = 1000;
     this.canvas.webkitRequestFullscreen();
+    this.canvas.focus();
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     
