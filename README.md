@@ -35,12 +35,13 @@ the extension manually:
 
 The following controls are supported in the viewer:
 
-|                 | Keyboard | Mouse        | Gamepad |
-| --------------- | -------- | ------------ | ------- |
-| **Zoom in**     | Up       | Scroll up    |         |
-| **Zoom out**    | Down     | Scroll down  |         |
-| **Play/Pause**  | Space    |              |         |
-| **Fullscreen**  |          | Double click |         |
+|                    | Keyboard | Mouse        | Gamepad |
+| ------------------ | -------- | ------------ | ------- |
+| **Zoom in**        | Up       | Scroll up    |         |
+| **Zoom out**       | Down     | Scroll down  |         |
+| **Play/Pause**     | Space    |              |         |
+| **Fullscreen**     |          | Double click |         |
+| **Toggle 3D mode** | M        |              |         |
 
 ## Limitations
 
@@ -56,7 +57,7 @@ YouTube and directly-visited video file URLs both appear to be unaffected.
 * ~~Capture basic input~~
   * ~~Zoom controls~~ (Now supported via up/down arrows)
   * ~~Playback controls~~ (Now supported via spacebar to play/pause)
-* 3D video support (ala VR Cinema 3D)
+* ~~3D video support (ala VR Cinema 3D)~~ (Now supporting side-by-side 3D videos via 'M' key)
 * Capture gamepad input
 * Capture HMD sensor input using vr.js
 

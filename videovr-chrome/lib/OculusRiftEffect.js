@@ -159,7 +159,7 @@ THREE.OculusRiftEffect = function ( renderer, options ) {
 		renderer.setSize( width, height );
 	};
 
-	this.render = function ( scene, camera ) {
+	this.render = function ( scene, camera, preLeftRender, preRightRender ) {
 		var cc = renderer.getClearColor().clone();
 
 		// Clear
@@ -171,7 +171,8 @@ THREE.OculusRiftEffect = function ( renderer, options ) {
 		if (camera.matrixAutoUpdate) camera.updateMatrix();
 
 		// Render left
-		this.preLeftRender();
+		if (preLeftRender !== undefined)
+			preLeftRender();
 
 		pCamera.projectionMatrix.copy(left.proj);
 
@@ -186,7 +187,8 @@ THREE.OculusRiftEffect = function ( renderer, options ) {
 		renderer.render( finalScene, oCamera );
 
 		// Render right
-		this.preRightRender();
+		if (preRightRender !== undefined)
+			preRightRender();
 
 		pCamera.projectionMatrix.copy(right.proj);
 

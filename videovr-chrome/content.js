@@ -1,4 +1,6 @@
 var videovr = {
+  MODE_3D_NONE: 0,
+  MODE_3D_HORIZONTAL: 1,
   started: false,
   iconClicked: function() {
     if (this.started == false) {
@@ -57,9 +59,48 @@ var videovr = {
     // Add OculusRiftEffect
     this.effect = new THREE.OculusRiftEffect(this.renderer);
     this.effect.setSize(this.width, this.height);
+    this.mode3d = videovr.MODE_3D_NONE;
     //effect.separation = 20;
     //effect.distortion = 0.1;
     //effect.fov = 110;
+    
+    // Define mappings for 3D modes
+    this.mappings_3d_none = [
+      [
+        new THREE.Vector2(0, 1),
+        new THREE.Vector2(0, 0),
+        new THREE.Vector2(1, 1)
+      ],
+      [
+        new THREE.Vector2(0, 0),
+        new THREE.Vector2(1, 0),
+        new THREE.Vector2(1, 1)
+      ]
+    ];
+    this.mappings_3d_horizontal_left = [
+      [
+        new THREE.Vector2(0, 1),
+        new THREE.Vector2(0, 0),
+        new THREE.Vector2(0.5, 1)
+      ],
+      [
+        new THREE.Vector2(0, 0),
+        new THREE.Vector2(0.5, 0),
+        new THREE.Vector2(0.5, 1)
+      ]
+    ];
+    this.mappings_3d_horizontal_right = [
+      [
+        new THREE.Vector2(0.5, 1),
+        new THREE.Vector2(0.5, 0),
+        new THREE.Vector2(1, 1)
+      ],
+      [
+        new THREE.Vector2(0.5, 0),
+        new THREE.Vector2(1, 0),
+        new THREE.Vector2(1, 1)
+      ]
+    ];
 
     document.addEventListener("webkitfullscreenchange", function () {
       if (videovr.effect !== undefined && videovr.canvas !== undefined)
@@ -79,12 +120,14 @@ var videovr = {
     this.video = videos[0];
 
     // Set up a rectangular plane object as a screen
-    var geometry = new THREE.PlaneGeometry(15, 15*(this.video.videoHeight/this.video.videoWidth));
+    this.geometry = new THREE.PlaneGeometry(15, 15*(this.video.videoHeight/this.video.videoWidth));
     this.texture = new THREE.Texture(this.video);
     var material = new THREE.MeshBasicMaterial( { map: this.texture, overdraw: true, side:THREE.DoubleSide } );
-    this.sceen = new THREE.Mesh( geometry, material );
+    this.sceen = new THREE.Mesh( this.geometry, material );
     this.sceen.position.z = -10;
     this.scene.add( this.sceen );
+    
+    console.log(this.geometry.faceVertexUvs[0]);
 
     // Set up skybox thing
     var cubegeometry = new THREE.CubeGeometry(100, 100, 200);
@@ -95,6 +138,7 @@ var videovr = {
     // Begin rendering to canvas
     (function animloop(){
       try {
+        // Detect changes in canvas size and adjust as necessary
         if (videovr.canvas.height != videovr.height || videovr.canvas.width != videovr.width) {
           videovr.width = videovr.canvas.width;
           videovr.height = videovr.canvas.height;
@@ -102,13 +146,30 @@ var videovr = {
           videovr.camera.aspect = videovr.width / window.height;
           videovr.camera.updateProjectionMatrix();
         }
+        // Tell the texture to re-read from the video
         if( videovr.video.readyState === videovr.video.HAVE_ENOUGH_DATA ){
           videovr.texture.needsUpdate = true;
         }
-        videovr.effect.render(videovr.scene, videovr.camera);
+        // Render the scene
+        if (videovr.mode3d == videovr.MODE_3D_NONE) {
+          videovr.geometry.faceVertexUvs[0] = videovr.mappings_3d_none
+          videovr.geometry.uvsNeedUpdate = true;
+        }
+        videovr.effect.render(videovr.scene, videovr.camera, function() {
+          if (videovr.mode3d == videovr.MODE_3D_HORIZONTAL) {
+            videovr.geometry.faceVertexUvs[0] = videovr.mappings_3d_horizontal_left;
+            videovr.geometry.uvsNeedUpdate = true;
+          }
+        }, function() {
+          if (videovr.mode3d == videovr.MODE_3D_HORIZONTAL) {
+            videovr.geometry.faceVertexUvs[0] = videovr.mappings_3d_horizontal_right;
+            videovr.geometry.uvsNeedUpdate = true;
+          }
+        });
         requestAnimationFrame(animloop);
       } catch (e) {
         alert("Sorry, this video isn't supported.");
+        console.log(e);
         videovr.destroy();
       }
     })();
@@ -132,6 +193,9 @@ var videovr = {
           break;
         case 27: // esc
           videovr.destroy();
+          break;
+        case 77: // M
+          videovr.mode3d = (videovr.mode3d + 1) % 2;
           break;
       }
     };
