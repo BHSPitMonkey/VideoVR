@@ -1,11 +1,13 @@
 {
   "name" : "VideoVR",
-  "version" : "1.0",
-  "description" : "Present a HTML5 Video in VR (for use with an Oculus Rift).",
+  "version" : "0.5",
+  "description" : "View a HTML5 Video in VR (for use with an Oculus Rift).",
+  "author": "Stephen Eisenhauer",
   "background" : {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "homepage_url": "https://github.com/BHSPitMonkey/VideoVR",
   "page_action" : {
     "default_icon" : "icon-19.png",
     "default_title" : "Play video in VR mode"
@@ -21,5 +23,11 @@
     "48" : "icon-48.png",
     "128" : "icon-128.png"
   },
-  "manifest_version": 2
+  "incognito": "split",
+  "manifest_version": 2,
+  "requirements": {
+    "3D": {
+      "features": ["webgl"]
+    }
+  }
 }
