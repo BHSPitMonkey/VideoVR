@@ -17,8 +17,12 @@ var videovr = {
     this.started = false;
   },
   start: function () {
-    if (this.started == true)
+    if (this.started == true) {
+      this.canvas.webkitRequestFullscreen();
       return;
+    }
+    this.started = true;
+    
     // Three.js setup
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -28,14 +32,18 @@ var videovr = {
     this.canvas.style.position = "fixed";
     this.canvas.style.top = 0;
     this.canvas.style.left = 0;
+    this.canvas.style.width = "100%";
+    this.canvas.style.height = "100%";
     this.canvas.style.zIndex = 2999999999;
     this.canvas.style.outline = "none";
     this.canvas.tabIndex = 1000;
     this.canvas.webkitRequestFullscreen();
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     
     // Add OculusRiftEffect
     this.effect = new THREE.OculusRiftEffect(this.renderer);
-    this.effect.setSize( window.innerWidth, window.innerHeight );
+    this.effect.setSize(this.width, this.height);
     //effect.separation = 20;
     //effect.distortion = 0.1;
     //effect.fov = 110;
@@ -74,6 +82,13 @@ var videovr = {
     // Begin rendering to canvas
     (function animloop(){
       try {
+        if (videovr.canvas.height != videovr.height || videovr.canvas.width != videovr.width) {
+          videovr.width = videovr.canvas.width;
+          videovr.height = videovr.canvas.height;
+          videovr.effect.setSize(videovr.width, videovr.height);
+          videovr.camera.aspect = videovr.width / window.height;
+          videovr.camera.updateProjectionMatrix();
+        }
         if( videovr.video.readyState === videovr.video.HAVE_ENOUGH_DATA ){
           videovr.texture.needsUpdate = true;
         }
@@ -106,14 +121,22 @@ var videovr = {
           else
             videovr.video.pause();
           break;
+        case 27: // esc
+          videovr.destroy();
+          break;
       }
     };
+
+    // Listen for double click
+    this.canvas.addEventListener('dblclick', function(e){ 
+      e.target.webkitRequestFullscreen();
+    });
   }
 };
 
 // Listen for messages from the background page
 // (It actually listens for messages from anyone in the context,
-//  but the background page is the one that interrests us)
+// but the background page is the one that interests us)
 chrome.runtime.onMessage.addListener(function(msg, sender, response) {
   // If we've been asked to post grades...
   if (msg.action && (msg.action == "startVideoVRMode")) {
