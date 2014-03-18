@@ -1,6 +1,6 @@
 {
   "name" : "VideoVR",
-  "version" : "0.5",
+  "version" : "0.6",
   "description" : "View a HTML5 Video in VR (for use with an Oculus Rift).",
   "author": "Stephen Eisenhauer",
   "background" : {
