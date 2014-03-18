@@ -15,9 +15,13 @@ the VR icon twice in order to properly activate fullscreen.)
 
 ## How to get it
 
-Once stable, VideoVR will be available for free through the Chrome Web Store
-(and hopefully later as a Firefox Add-on). For now, you will need to install
-it manually:
+You can get VideoVR from the Chrome Web Store here:
+https://chrome.google.com/webstore/detail/llboikkjbdkhngdjpmgaflalnplfilgl
+
+(Hopefully there will be a Firefox version ready in the near future as well.)
+
+You can also install the most recent version of the code into Chrome by loading
+the extension manually:
 
 * Download and extract a copy of this repository (
   [ZIP download](https://github.com/BHSPitMonkey/VideoVR/archive/master.zip))
@@ -31,9 +35,12 @@ it manually:
 
 The following controls are supported in the viewer:
 
-* **Zoom in**: Up arrow key
-* **Zoom out**: Down arrow key
-* **Play/Pause**: Spacebar
+|                 | Keyboard | Mouse        | Gamepad |
+| --------------- | -------- | ------------ | ------- |
+| **Zoom in**     | Up       | Scroll up    |         |
+| **Zoom out**    | Down     | Scroll down  |         |
+| **Play/Pause**  | Space    |              |         |
+| **Fullscreen**  |          | Double click |         |
 
 ## Limitations
 
@@ -61,4 +68,8 @@ YouTube and directly-visited video file URLs both appear to be unaffected.
 ## License
 
 Authors of included third-party code retain all rights to their contributions.
-All other content in this repository is not yet licensed for reuse.
+(Both Three.JS and OculusRiftEffect.js were licensed by their original authors
+under the terms of the MIT License.)
+
+All other software in this repository is provided under the MIT License.
+Please see LICENSE for the full license text.
