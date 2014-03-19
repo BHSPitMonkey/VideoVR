@@ -75,40 +75,16 @@ var videovr = {
     
     // Define mappings for 3D modes
     this.mappings_3d_none = [
-      [
-        new THREE.Vector2(0, 1),
-        new THREE.Vector2(0, 0),
-        new THREE.Vector2(1, 1)
-      ],
-      [
-        new THREE.Vector2(0, 0),
-        new THREE.Vector2(1, 0),
-        new THREE.Vector2(1, 1)
-      ]
+      [new THREE.Vector2(0, 1), new THREE.Vector2(0, 0), new THREE.Vector2(1, 1)],
+      [new THREE.Vector2(0, 0), new THREE.Vector2(1, 0), new THREE.Vector2(1, 1)]
     ];
     this.mappings_3d_horizontal_left = [
-      [
-        new THREE.Vector2(0, 1),
-        new THREE.Vector2(0, 0),
-        new THREE.Vector2(0.5, 1)
-      ],
-      [
-        new THREE.Vector2(0, 0),
-        new THREE.Vector2(0.5, 0),
-        new THREE.Vector2(0.5, 1)
-      ]
+      [new THREE.Vector2(0, 1), new THREE.Vector2(0, 0), new THREE.Vector2(0.5, 1)],
+      [new THREE.Vector2(0, 0), new THREE.Vector2(0.5, 0), new THREE.Vector2(0.5, 1)]
     ];
     this.mappings_3d_horizontal_right = [
-      [
-        new THREE.Vector2(0.5, 1),
-        new THREE.Vector2(0.5, 0),
-        new THREE.Vector2(1, 1)
-      ],
-      [
-        new THREE.Vector2(0.5, 0),
-        new THREE.Vector2(1, 0),
-        new THREE.Vector2(1, 1)
-      ]
+      [new THREE.Vector2(0.5, 1), new THREE.Vector2(0.5, 0), new THREE.Vector2(1, 1)],
+      [new THREE.Vector2(0.5, 0), new THREE.Vector2(1, 0), new THREE.Vector2(1, 1)]
     ];
 
     document.addEventListener("webkitfullscreenchange", function () {
@@ -131,7 +107,7 @@ var videovr = {
     // Set up a rectangular plane object as a screen
     this.geometry = new THREE.PlaneGeometry(15, 15*(this.video.videoHeight/this.video.videoWidth));
     this.texture = new THREE.Texture(this.video);
-    var material = new THREE.MeshBasicMaterial( { map: this.texture, overdraw: true, side:THREE.DoubleSide } );
+    var material = new THREE.MeshBasicMaterial( { map: this.texture, overdraw: true, side:THREE.FrontSide } );
     this.sceen = new THREE.Mesh( this.geometry, material );
     this.sceen.position.z = -10;
     this.scene.add( this.sceen );
