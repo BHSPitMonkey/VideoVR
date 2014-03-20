@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 // Do this when the pageAction icon is clicked
-function onPageActionClicked(tab) {
+chrome.pageAction.onClicked.addListener(function(tab) {
     console.log("Calling content_script...");
     chrome.tabs.sendMessage(tab.id, { action: "startVideoVRMode" }, function() {
         console.log("Callback fired");
@@ -58,5 +58,4 @@ function onPageActionClicked(tab) {
             });
         }
     });
-};
-chrome.pageAction.onClicked.addListener(onPageActionClicked);
+});

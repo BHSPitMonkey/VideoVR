@@ -1,0 +1,9 @@
+{
+  "name": "VideoVR",
+  "title": "VideoVR for Firefox",
+  "id": "jid1-AnJG26cYHDKD5A",
+  "description": "Turn HTML5 videos into virtual reality movie screens.",
+  "author": "Stephen Eisenhauer",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}

@@ -1,3 +1,5 @@
+// Taken from http://threejs.org/examples/js/effects/OculusRiftEffect.js
+// Only the setSize method has been modified.
 /**
  * @author troffmo5 / http://github.com/troffmo5
  *
