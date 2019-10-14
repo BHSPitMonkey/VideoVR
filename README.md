@@ -1,5 +1,17 @@
 # VideoVR Browser Extension
 
+## ⚠️ Deprecation Notice ⚠️
+
+### This extension is unsupported and no longer being developed.
+
+This software was developed before modern standards like WebVR/WebXR existed;
+The approaches used in this extension are no longer necessary today.
+
+Instead, consider using a VR-ready web browser such as 
+[Firefox](https://www.mozilla.org/firefox/) for PC) or 
+[Firefox Reality](https://mixedreality.mozilla.org/firefox-reality) (for 
+standalone VR devices).
+
 ## Description
 
 VideoVR is a browser extension (currently only for Chrome) allowing videos in
